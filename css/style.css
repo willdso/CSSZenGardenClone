@@ -1,0 +1,214 @@
+/*Thanks ChatGPT for all help.*/
+
+.CoverContainer {
+    background-image: url('../images/cover.jpg');
+    background-repeat: no-repeat;   /*The images was repeating*/
+    background-size: cover; /*Full the page*/
+    background-position: center center; /*Centralize the image*/
+    margin-top: -8px;
+
+    height: 310px;  /*Define the height of the cover*/
+}
+
+header {margin-left: 300px; height: 310px; padding-top: 60px}   /*The header has the same height that the cover. So the padding top are centralizing the header.*/
+
+/*The before is very used to put content before a content.
+IMPORTANT! To make ::before/after works, take care about this following attributes:
+    content: "";
+    background-image: url('path');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+After that you make it works, try change some attributes if you need.
+*/
+header::before {    
+    content: "";
+    background-image: url('../images/enso.svg');
+    background-repeat: no-repeat;
+    background-size: 180px;
+    /*Sometimes the image and attributes just works if width, height and position is set like this.*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-left: -200px;
+    opacity: 0.8;
+}
+
+header h1 {color: #fff; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 3em; font-weight:lighter;}
+header h3 {color: rgb(206, 206, 206);font-family:Georgia, 'Times New Roman', Times, serif; margin-top: -30px; font-size: 1.8em;font-weight:lighter;}
+
+/*This isn't a button. Is just a emulate.*/
+.button-part {
+    /*I used float to put the "button" at right.*/
+    float: right;
+    height: 170px;
+    background-color: rgba(102, 143, 141, 0.3);
+    margin-top: -211px;
+    width: 449px;
+    padding-top: 140px;
+}
+
+
+.button-view {
+    color: #fff;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*The 0.3 is the opacity. You can use 'filter: blur(0.3);', but all the div will be effected. This way will prevent this problem and add the attribute just to the image.*/
+    background-color: rgba(102, 143, 141, 0.3);
+    width: 240px;
+    margin-left: 80px;
+    margin-right: 100px;
+    font-size: 1.2em;
+    height: 40px;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.button-view::after{
+    content: "";
+    background-color: rgba(102, 143, 141, 0.3);
+    position: absolute;
+
+    background-image: url('../images/arrow.png');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    /*I was only able to center the image with the position attributes*/
+    background-position: center;
+
+    height: 8.8%;
+    width: 4.5%;
+    margin-left: 65px;
+    margin-top: -20px;
+}
+
+
+.BodyContainer {
+    padding-left: 130px;
+    margin-top: 70px;
+    color: rgb(69, 100, 79);
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+
+    /*I used the float to fix the main contain at left and the aside at right.*/
+    float: left;
+    /*It's a ruge problem, because the site isn't responsible:*/
+    width: 758px; /*893*/
+}
+
+/*Create the html and css "button". I guess is pretty cool :)*/
+.html-css-link {color: rgb(98, 119, 78);}
+.html-css-link::before {
+    content: '';
+    background-image: url(../images/download.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 1.45%;
+    height: 3%;
+    position: absolute;
+    margin-left: -20px;
+    background-color: rgb(205, 226, 187);
+    border-radius: 20%;
+}
+
+.BodyContainer h1{font-size: 1.5em; font-family:sans-serif;font-weight:lighter; padding-top: 15px;}
+
+.middle-section {
+    background-color: rgba(194,218,204,255);
+    margin-left: -130px;
+    /*margin-top: 100px;*/
+    padding-left: 130px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.final-message {
+    background-image: url('../images/messagecover.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 2.2em;
+    padding-left: 130px;
+    padding-right: 120px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: rgb(205, 226, 187);
+    font-style: italic;
+    margin-top: 80px;
+    /*I didn't understand it, but if I don't use clear, the page bugs... The image is fixed before and after the middle-section div (Crazy, no?)*/
+    clear: both;
+    text-align: center;
+}
+
+.bold-names {color: #fff;}
+
+.c-footer {
+    background-color: rgba(19,67,71,255);
+    /*The flex help to put the images inline and to justify*/
+    display: flex;
+    justify-content: center;
+    margin-left: -130px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.c-footer img {
+    margin-right: 48px;
+    margin-left: 48px;
+}
+
+aside {
+    background-color: #e5ede8;
+    /*That problem with responsible:*/
+    width: 389px;
+    /*Other problem, I don't want to fix a height for this section...*/
+    height: 1890px;
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(37, 33, 33);
+    padding-left: 60px;
+    padding-top: 60px;
+}
+
+.name-one {
+    color: rgb(89, 128, 101);
+    font-size: 1.3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.name-by {
+    color: rgb(161, 170, 165);
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;  /*Retire the list icons*/
+    padding-right: 100px;
+}
+
+li {
+    padding-bottom: 20px;
+    /*I was easy to fix that lines, but how to do to prevent the last line?*/
+    border-bottom: rgb(161, 170, 165) solid;
+    border-width: 1px;
+    padding-top: 20px;
+}
+
+.nav {
+    background-color: #b4d0bf;
+    justify-content: center;
+    /*I don't know how to coordinate this part with the middle-section part. So I did it manually:*/
+    margin-left: -60px;
+    margin-top: -11px;
+    height: 496px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 40px;
+    padding-top: 120px;
+    font-size: 1.3em;
+    color: #7e9788;
+    
+}
+
+
+
+
+
